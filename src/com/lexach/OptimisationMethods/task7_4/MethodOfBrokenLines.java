@@ -5,9 +5,9 @@ class MethodOfBrokenLines {
         double max = myFunc.getDerivative(a);
 
         for (double i = a; i < b; i += 0.01) {
-            double thisMax = myFunc.getDerivative(i);
-            if (max < thisMax)
-                max = thisMax;
+            double var = myFunc.getDerivative(i);
+            if (max < var)
+                max = var;
 
         }
 
@@ -26,13 +26,12 @@ class MethodOfBrokenLines {
             double x1 = xOpt - DELTA;
             double x2 = xOpt + DELTA;
 
-
-            p = 1 / 2 * (myFunc.getFunction(xOpt) + p);
-
             if (myFunc.getFunction(x1) < myFunc.getFunction(x2))
                 xOpt = x1;
             else
                 xOpt = x2;
+
+            p = (1 / 2) * (myFunc.getFunction(xOpt) + p);
 
             DELTA = 1 / (2 * L) * (myFunc.getFunction(xOpt) - p);
         }
