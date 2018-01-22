@@ -1,22 +1,26 @@
 package com.lexach.OptimisationMethods.task7_4;
 
-class MethodOfBrokenLines {
-    private static double methodForLSearch(double a, double b, double epsilon, Function myFunc) {
+class
+MethodOfBrokenLines {
+    private static double methodForLSearch(double a, double b, Function myFunc) {
         double max = myFunc.getDerivative(a);
 
         for (double i = a; i < b; i += 0.01) {
             double var = myFunc.getDerivative(i);
             if (max < var)
                 max = var;
-
         }
 
+        //System.out.println(b);
+        System.out.println(max);
         return max;
+        //return Function.getDerivative(a);
     }
 
     public static double methodOfBrokenLines(double a, double b, double epsilon, Function myFunc) {
-        double L = methodForLSearch(a, b, 1, myFunc);
+        double L = methodForLSearch(a, b, myFunc);
 
+        //Шаг 1 -- вычислить x_0, y_0 по форам (3.10)
         double xOpt = 1 / (2 * L) * (myFunc.getFunction(a) - myFunc.getFunction(b) + L * (a + b));
         double yOpt = 1 / 2 * (myFunc.getFunction(a) + myFunc.getFunction(b) + L * (a - b));
         double p = yOpt;
