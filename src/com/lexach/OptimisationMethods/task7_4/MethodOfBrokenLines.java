@@ -22,8 +22,10 @@ MethodOfBrokenLines {
 
         //Шаг 1 -- вычислить x_0, y_0 по форам (3.10)
         double xOpt = 1 / (2 * L) * (myFunc.getFunction(a) - myFunc.getFunction(b) + L * (a + b));
-        double yOpt = 1 / 2 * (myFunc.getFunction(a) + myFunc.getFunction(b) + L * (a - b));
-        double p = yOpt;
+        //double yOpt = 1 / 2 * (myFunc.getFunction(a) + myFunc.getFunction(b) + L * (a - b));
+        //double p = yOpt;
+        double p = 1 / 2 * (myFunc.getFunction(a) + myFunc.getFunction(b) + L * (a - b));
+
 
         double DELTA = 1 / (2 * L) * (myFunc.getFunction(xOpt) - p);
         while ((2 * L * DELTA) > epsilon) {
