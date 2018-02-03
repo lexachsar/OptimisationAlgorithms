@@ -1,7 +1,6 @@
 package com.lexach.OptimisationMethods.task7_4;
 
-class
-MethodOfBrokenLines {
+class MethodOfBrokenLines {
     private static double methodForLSearch(double a, double b, Function myFunc) {
         double max = myFunc.getDerivative(a);
 
